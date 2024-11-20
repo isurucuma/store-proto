@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "github.com/isurucuma/store-proto/shipping";
+
+message CreateShippingRequest {
+    string address = 1;
+    string order_id = 2;
+}
+
+message CreateShippingResponse {
+  string tracking_id = 1;
+}
+
+service Shipping {
+  rpc Create(CreateShippingRequest) returns (CreateShippingResponse){}
+}
